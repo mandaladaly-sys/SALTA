@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esencia Salteña - Turismo & Aventura</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --verde-oscuro: #2f5d34;
+            --verde-medio: #3f7d3a;
+            --verde-claro: #5fae4b;
+            --dorado: #C9A66B;
+            --gris-claro: #F5F1E8;
+            --blanco: #FFFFFF;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--verde-oscuro);
+            line-height: 1.6;
+            background: linear-gradient(135deg, rgba(241,248,233,0.95), rgba(220,237,200,0.95), rgba(174,213,129,0.95));
+        }
+
+        header {
+            background: linear-gradient(135deg, #2f5d34, #3f7d3a, #5fae4b);
+            color: var(--blanco);
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--dorado);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        #logo { font-weight: 700; letter-spacing: 2px; font-size: 1.8rem; }
+        #logo span { color: var(--dorado); }
+
+        nav ul { list-style: none; margin-top: 10px; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: var(--blanco); text-decoration: none; font-size: 12px; text-transform: uppercase; }
+        nav ul li a:hover { color: var(--dorado); }
+
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('salta.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--dorado);
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+            animation: fadeUp 1.2s ease forwards;
+        }
+
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .grid-destinos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-8px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+
+        .seccion-contacto { background: var(--verde-oscuro); color: white; padding: 50px 20px; text-align: center; }
+        form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+        input, select { padding: 12px; border-radius: 6px; border: none; }
+        .btn-enviar { background: var(--dorado); color: var(--verde-oscuro); border: none; padding: 15px; font-weight: bold; cursor: pointer; }
+
+        footer { background: #1b3a1f; color: #aaa; padding: 20px; text-align: center; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 id="logo">Esencia <span>Salteña</span></h1>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#destinos">Excursiones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div>
+            <h2>Descubrí Salta</h2>
+            <p>"Entre nubes y quebradas, serán tus mejores escapadas"</p>
+        </div>
+    </section>
+
+    <section id="destinos" class="container">
+        <h2 style="text-align:center; margin-bottom:30px;">Destinos Destacados</h2>
+        <div class="grid-destinos">
+            <article class="card">
+                <img src="cafayate.jpg" alt="Cafayate">
+                <div class="card-info" style="padding:20px;">
+                    <h3>Cafayate</h3>
+                    <p>"Donde el sol madura los vinos."</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="cachi.jpg" alt="Cachi">
+                <div class="card-info" style="padding:20px;">
+                    <h3>Cachi</h3>
+                    <p>"Entre cardones y nevados."</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="Iruya.jpg" alt="Aventura">
+                <div class="card-info" style="padding:20px;">
+                    <h3>Iruya</h3>
+                    <p>"Donde el silencio cuenta historias."</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-contacto">
+        <h2>Planificá tu próximo viaje</h2>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Email" required>
+            <select>
+                <option value="">Destino de interés</option>
+                <option>Cachi</option>
+                <option>Cafayate</option>
+                <option>Iruya</option>
+            </select>
+            <button type="submit" class="btn-enviar">Consultar Ahora</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 La Linda Turismo | Ingeniería Informática | Michel Dalila</p>
+</footer>
+
+</body>
+</html>
